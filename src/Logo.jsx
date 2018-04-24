@@ -2,7 +2,7 @@ import React from "react";
 import { TMDB_API } from "./constants";
 import styled from "styled-components";
 
-const Image = styled.image`
+const Logo = styled.div`
   display: block;
   margin: 0 auto;
   margin-left: 25%;
@@ -10,12 +10,12 @@ const Image = styled.image`
   max-width: 140px;
 `;
 
-const Logo = () => (
+const TMDBLogo = () => (
   <div>
-    <Image>
+    <Logo>
       <img src={TMDB_API.LOGO} alt="The Movie Database" />
-    </Image>
+    </Logo>
   </div>
 );
 
-export default Logo;
+export default TMDBLogo;

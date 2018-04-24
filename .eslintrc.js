@@ -10,5 +10,6 @@ module.exports = {
     sourceType: "module",
     ecmaFeatures: ""
   },
-  parser: "babel-eslint"
+  parser: "babel-eslint",
+  globals: { process: true }
 };
