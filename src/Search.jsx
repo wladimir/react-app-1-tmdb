@@ -11,8 +11,6 @@ class Search extends React.Component {
     suggestions: []
   };
 
-  requestTimer = null;
-
   render() {
     return (
       <div>
@@ -29,8 +27,7 @@ class Search extends React.Component {
           }}
           onChange={(event, value) => {
             this.setState({ value });
-            clearTimeout(this.requestTimer);
-            this.requestTimer = fetch(
+            fetch(
               `${TMDB_API.TMDB_URL}/search/movie?query=${value}&api_key=${
                 process.env.REACT_APP_TMDB_API_KEY
               }`
