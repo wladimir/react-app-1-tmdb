@@ -48,7 +48,6 @@ class Search extends React.Component {
                 this.setState({ suggestions: [] });
               });
           }}
-          renderMenu={children => <div className="menu">{children}</div>}
           renderItem={(item, isHighlighted) => (
             <div
               className={`item ${isHighlighted ? "item-highlighted" : ""}`}
