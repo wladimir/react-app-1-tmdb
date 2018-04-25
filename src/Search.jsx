@@ -42,6 +42,10 @@ class Search extends React.Component {
                   })
                 );
                 this.setState({ suggestions: titles });
+              })
+              .catch(e => {
+                console.error(e);
+                this.setState({ suggestions: [] });
               });
           }}
           renderMenu={children => <div className="menu">{children}</div>}

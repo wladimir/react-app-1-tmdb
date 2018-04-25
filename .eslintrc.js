@@ -11,5 +11,8 @@ module.exports = {
     ecmaFeatures: ""
   },
   parser: "babel-eslint",
-  globals: { process: true }
+  globals: { process: true },
+  rules: {
+    "no-console": "off"
+  }
 };
