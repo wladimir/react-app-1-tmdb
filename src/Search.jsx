@@ -1,8 +1,8 @@
 import React from "react";
 import TMDBLogo from "./Logo";
 import Autocomplete from "react-autocomplete";
-import styled from "styled-components";
 import { TMDB_API } from "./constants";
+import "./Search.css";
 
 class Search extends React.Component {
   // component state
@@ -13,10 +13,11 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="Search">
         <TMDBLogo />
         <label htmlFor="movies-autocomplete">Search movie title </label>
         <Autocomplete
+          className="Search-autosuggest"
           inputProps={{ id: "movies-autocomplete" }}
           wrapperStyle={{ position: "relative", display: "inline-block" }}
           value={this.state.value}
