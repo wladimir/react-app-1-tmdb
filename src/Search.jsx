@@ -13,12 +13,14 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div className="Search">
+      <div>
         <TMDBLogo />
-        <label htmlFor="movies-autocomplete">Search movie title </label>
         <Autocomplete
           className="Search-autosuggest"
-          inputProps={{ id: "movies-autocomplete" }}
+          inputProps={{
+            id: "movies-autocomplete",
+            placeholder: "Search movie title"
+          }}
           wrapperStyle={{ position: "relative", display: "inline-block" }}
           value={this.state.value}
           items={this.state.suggestions}
