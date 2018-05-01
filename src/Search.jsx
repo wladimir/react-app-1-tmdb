@@ -2,17 +2,9 @@ import React from "react";
 import TMDBLogo from "./Logo";
 import Autocomplete from "react-autocomplete";
 import { TMDB_API } from "./constants";
-import styled from "styled-components";
-
-const SearchWrapper = styled.div`
-  font-family: "Fjalla One";
-  font-size: 1.2em;
-  width: 50%;
-  height: 50%;
-  float: right;
-  margin-left: 2%;
-  margin-top: 2%;
-`;
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap-theme.css";
+import { Button } from "react-bootstrap";
 
 class Search extends React.Component {
   // component state
@@ -24,6 +16,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="col-xs-12 search-container nopadding">
+        <Button>click</Button>
         <TMDBLogo />
         <Autocomplete
           className="Search-autosuggest"
