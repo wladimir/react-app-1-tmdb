@@ -4,8 +4,6 @@ import styled from "styled-components";
 
 const Logo = styled.div`
   display: block;
-  margin: 0 auto;
-  margin-left: 25%;
   width: 100%;
   max-width: 140px;
 `;
