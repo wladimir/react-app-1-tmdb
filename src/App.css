@@ -1,0 +1,22 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: white;
+  background-repeat: no-repeat;
+  font-family: "Lato";
+  font-size: 2em;
+  background-size: cover;
+  height: 100%;
+}
+
+#outer-container {
+  background-color: black;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+#app {
+  animation: fadein ease-out 1.4s;
+}

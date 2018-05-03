@@ -1,0 +1,41 @@
+.search-container {
+  margin: 30px auto;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .search-container {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  #movies-autocomplete {
+    min-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #movies-autocomplete {
+    min-width: 200%;
+  }
+}
+
+.search-form {
+  color: white;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.search-form:hover {
+  background-color: #32cd32;
+  cursor: pointer;
+}
+
+.logo {
+  width: 100%;
+  max-width: 150px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  display: block;
+}
