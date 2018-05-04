@@ -3,7 +3,6 @@ import TMDBLogo from "./Logo";
 import Autocomplete from "react-autocomplete";
 import { TMDB_API } from "./constants";
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap-theme.css";
 import "./Search.css";
 
 class Search extends React.Component {
@@ -16,7 +15,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="col-xs-12 search-container">
-        <div className="row">
+        <div className="row xxx">
           <TMDBLogo />
           <Autocomplete
             className="col-sm-6 form-group col-lg-10"
