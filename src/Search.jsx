@@ -12,10 +12,14 @@ class Search extends React.Component {
     suggestions: []
   };
 
+  handleChange(value) {
+    console.log("clicked", value);
+  }
+
   render() {
     return (
       <div className="col-xs-12 search-container">
-        <div className="row xxx">
+        <div className="row">
           <TMDBLogo />
           <Autocomplete
             className="col-sm-6 form-group col-lg-10"
@@ -32,6 +36,11 @@ class Search extends React.Component {
             getItemValue={item => item.title}
             onSelect={value => {
               this.setState({ value, suggestions: [] });
+              this.handleChange(
+                this.state.suggestions.find(function(element) {
+                  return element.title === value;
+                })
+              );
             }}
             onChange={(event, value) => {
               this.setState({ value });
@@ -43,13 +52,15 @@ class Search extends React.Component {
                 .then(res => res.json())
                 .then(data => {
                   const titles = [];
-                  data.results.map(movie =>
-                    titles.push({
-                      title: movie.original_title,
-                      id: movie.id
-                    })
-                  );
-                  this.setState({ suggestions: titles });
+                  if (data.results) {
+                    data.results.map(movie =>
+                      titles.push({
+                        title: movie.original_title,
+                        id: movie.id
+                      })
+                    );
+                    this.setState({ suggestions: titles });
+                  }
                 })
                 .catch(e => {
                   console.error(e);
