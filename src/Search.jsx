@@ -4,6 +4,7 @@ import Autocomplete from "react-autocomplete";
 import { TMDB_API } from "./constants";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Search.css";
+import { func } from "prop-types";
 
 class Search extends React.Component {
   // component state
@@ -11,10 +12,6 @@ class Search extends React.Component {
     value: "",
     suggestions: []
   };
-
-  handleChange(value) {
-    console.log("clicked", value);
-  }
 
   render() {
     return (
@@ -36,7 +33,8 @@ class Search extends React.Component {
             getItemValue={item => item.title}
             onSelect={value => {
               this.setState({ value, suggestions: [] });
-              this.handleChange(
+
+              this.props.onClick(
                 this.state.suggestions.find(function(element) {
                   return element.title === value;
                 })
@@ -44,6 +42,7 @@ class Search extends React.Component {
             }}
             onChange={(event, value) => {
               this.setState({ value });
+
               fetch(
                 `${TMDB_API.TMDB_URL}/search/movie?query=${value}&api_key=${
                   process.env.REACT_APP_TMDB_API_KEY
@@ -83,5 +82,9 @@ class Search extends React.Component {
     );
   }
 }
+
+Search.propTypes = {
+  onClick: func.isRequired
+};
 
 export default Search;

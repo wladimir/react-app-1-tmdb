@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background: white;
+  background: black;
   background-repeat: no-repeat;
   font-family: "Lato";
   font-size: 1.6em;
@@ -12,6 +12,6 @@ body {
 }
 
 #outer-container {
-  background-color: black;
+  background-attachment: fixed;
   margin: 0;
 }

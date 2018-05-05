@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      movieId: ""
+      id: ""
     };
   }
 
@@ -17,15 +17,16 @@ class App extends Component {
     this.fetchLatestMovie();
   }
 
-  fetchMovieData() {
-    const url = `${TMDB_API.TMDB_URL}/movie/${this.state.movieId}?&api_key=${
+  fetchMovieData(movie) {
+    const url = `${TMDB_API.TMDB_URL}/movie/${movie.id}?&api_key=${
       process.env.REACT_APP_TMDB_API_KEY
     }`;
+
     fetch(url)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          movieID: data.id,
+          id: data.id,
           original_title: data.original_title,
           tagline: data.tagline,
           overview: data.overview,
@@ -40,12 +41,10 @@ class App extends Component {
           revenue: data.revenue,
           backdrop: data.backdrop_path
         });
-
-        console.log(this.state);
       })
       .catch(e => {
         console.error(e);
-        this.setState({ moviedId: "" });
+        this.setState({ id: "" });
       });
   }
 
@@ -57,21 +56,19 @@ class App extends Component {
     )
       .then(res => res.json())
       .then(data => {
-        const movieId = data.results[0].id;
-        this.setState({ movieId });
-
-        this.fetchMovieData();
+        const id = data.results[0].id;
+        this.fetchMovieData({ id });
       })
       .catch(e => {
         console.error(e);
-        this.setState({ moviedId: "" });
+        this.setState({ id: "" });
       });
   }
 
   render() {
     return (
       <div className="App">
-        <Search fetchMovieData={this.fetchMovieData.bind(this)} />
+        <Search onClick={movie => this.fetchMovieData(movie)} />
         <Card data={this.state} />
       </div>
     );
