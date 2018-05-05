@@ -66,13 +66,8 @@ class Search extends React.Component {
                   this.setState({ suggestions: [] });
                 });
             }}
-            renderItem={(item, isHighlighted) => (
-              <div
-                className={`search-form item ${
-                  isHighlighted ? "item-highlighted" : ""
-                }`}
-                key={item.id}
-              >
+            renderItem={item => (
+              <div className="search-form" key={item.id}>
                 {item.title}
               </div>
             )}
