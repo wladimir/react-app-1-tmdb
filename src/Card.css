@@ -1,13 +1,47 @@
+.nopadding {
+  padding: 0;
+}
+
 .cardcont {
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.85);
 }
 
-.poster-container > .poster {
+.poster-container .poster {
   width: 100%;
   border-radius: 0 0 3px 3px;
 }
 
-.nopadding {
-  padding: 0;
+.meta-data-container {
+  padding: 15px;
+  color: white;
+}
+
+.meta-data-container h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.2em;
+  font-family: "Lato";
+}
+
+.meta-data-container .additional-details {
+  margin: 35px 0 20px;
+}
+
+.meta-data-container .additional-details .release-details div:nth-child(n + 3) {
+  margin-top: 15px;
+}
+
+.meta-data-container .meta-data {
+  display: block;
+  font-size: 1.6em;
+  line-height: 1.1em;
+  color: #32cd32;
+}
+
+.tagline {
+  display: block;
+  padding-bottom: 0.25em;
+  font-size: 1.3em;
+  color: #32cd32;
 }

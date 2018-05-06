@@ -54,7 +54,7 @@ class Card extends Component {
           </div>
         </div>
         <div className="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-5 pull-lg-7 ">
-          <img id="postertest" className="poster" src={poster} />
+          <img className="poster" src={poster} alt="poster" />
         </div>
       </div>
     );

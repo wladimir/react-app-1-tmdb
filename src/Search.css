@@ -1,6 +1,7 @@
 .search-container {
   margin: 10px auto;
   width: 100%;
+  z-index: 999;
 }
 
 #movies-autocomplete {
