@@ -14,4 +14,5 @@ body {
     rgba(0, 0, 0, 0.2) 40%,
     black 90%
   );
+  position: absolute;
 }
